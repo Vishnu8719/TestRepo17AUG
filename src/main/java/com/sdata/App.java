@@ -7,7 +7,7 @@ public class App {
 	public int UserLogin(String User, String Pwd)
 	{
 	
-		// This is the Login function //
+		// This is the Login function ..//
 	ResourceBundle rb=ResourceBundle.getBundle("config");
 	String Uname=rb.getString("username");
 	String Pawd=rb.getString("password");
