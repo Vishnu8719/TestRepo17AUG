@@ -2,7 +2,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sdata</groupId>
   <artifactId>myproject</artifactId>
+  <packaging>jar</packaging>
   <version>0.0.1-SNAPSHOT</version>
+  <name>myproject</name>
+  
+  <!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+
   
   <properties>
     <maven.compiler.source>1.6</maven.compiler.source>
@@ -18,7 +23,36 @@
     <scope>test</scope>
 </dependency>
 
+<dependency>
+<groupId>org.sonarsource.scanner.maven</groupId>
+<artifactId>sonar-maven-plugin</artifactId>
+<version>3.2</version>
+</dependency>
+
 </dependencies>
   
+  <profiles>
+<profile>
+<id>admin</id>
+<activation>
+<activeByDefault>true</activeByDefault>
+</activation>
+<properties>
+<!-- Optional URL to server. Default value is http://localhost:9000 -->
+<sonar.host.url>
+http://localhost:9000
+</sonar.host.url>
+<sonar.login>4d78904d02a6291bf220095040a9c6b16e7a7ef7</sonar.login>
+</properties>
+</profile>
+</profiles>
+
+<repositories>
+    <repository>
+      <id>artifactory</id>
+      <name>MyRepository1</name>
+      <url>http://localhost:8046/artifactory/MyRepository</url>
+    </repository>
+  </repositories>
   
 </project>
