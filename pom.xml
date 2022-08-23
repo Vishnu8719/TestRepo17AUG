@@ -53,12 +53,14 @@ http://localhost:9000
 </profile>
 </profiles>
 
-<repositories>
+<distributionManagement>
+
     <repository>
       <id>artifactory</id>
       <name>MyRepository</name>
       <url>http://localhost:8046/artifactory/MyRepository</url>
     </repository>
-  </repositories>
+  
+</distributionManagement>
   
 </project>
